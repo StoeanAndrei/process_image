@@ -1,13 +1,11 @@
 # process_image
 
-Pentru explicarea implementari, am ales sa discut cateva lucruri generale despre fiecare stare a automatului. Astfel, avem:
-
-Pentru TASK 1, conversia imaginii din RGB in grayscale:
+Task1, conversia imaginii din RGB in grayscale:
 -INIT, reprezinta o prima stare unde initializam anumite variabile cu valori initiale 	
 -GRAY, starea in care sparg fiecare pixel in 3 parti, R, G, si B, calculez maximul si minimul dintre acestia, apoi fac media lor pentru a o aplica in pixel, pe pozitia din mijloc(pe cei 8 biti din mijloc). In aceeasi stare incrementez row si col pentru a trece la pixelul urmator. Verific de asemenea daca am ajuns la finalul imaginii. Mentionez ca imaginea a fost parcursa de la stanga la dreapta, de sus in jos.
 -DONE, este starea in care pun gray_done pe 1 pentru a anunta terminarea conversiei.
 
-Pentru TASK 2, compresia imaginii folosind metoda AMBTC:
+Task2, compresia imaginii folosind metoda AMBTC:
 -AMBTC, este o stare de inceput a compresiei imaginii, unde initializez cateva variabile, pentru parcurgerea imaginii. Am divizat imaginea mea intr-o matrice de 16 pe 16 bloculete, fiecare bloculet reprezentand o matrice de 4 pe 4 pixeli.
 -BLOCKINIT, in aceasta stare initializez cu 0 variabile necesare si caracteristice fiecarui bloculet, precum Lm, Hm, avg, var si cele urmatoare cu next, pentru schimbarea in fiecare ciclu de ceas.
 -AVG, in mod clar, in aceasta stare calculez media elementelor din bloculet, parcurgand bloculetul de la stanga la dreapta, de sus in jos.
